@@ -1,0 +1,5 @@
+*.db
+*.log
+globals.py
+show.py
+test.py
