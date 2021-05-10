@@ -3,3 +3,4 @@
 globals.py
 show.py
 test.py
+__pycache__/
