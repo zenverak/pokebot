@@ -208,6 +208,16 @@ def delete_pk(trainer, name):
         return True,''
     except Exception as e:
         return False, e
+
+
+def list_pk(trainer):
+    c = dbConn.cursor()
+    statement = '''select name, species from pokemon where trainer=? '''
+    try:
+        c.execute(statement, (trainer,))
+        return c.fetchall(),''
+    except Exception as e:
+        return False, e
     
     
 

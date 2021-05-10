@@ -50,7 +50,24 @@ class Any(commands.Cog):
                 return False
             print(pokemon)
             embed = utils.create_pk_battle_embed(pokemon[0])
-            await ctx.message.channel.send(embed=embed)      
+            await ctx.message.channel.send(embed=embed)
+
+    @commands.command(pass_context=True)    
+    async def listpk(self, ctx, arg1=''):
+    ##used to list all pokemon from a specific trainer 
+        if arg1 != '':
+            trainer = str(ctx.message.mentions[0].id)
+            tname = ctx.message.mentions[0].name
+        else:
+            trainer = str(ctx.message.author.id)
+            tname = ctx.message.author.name
+        pokemon, error = db.list_pk(trainer)
+        if error != '':
+            await ctx.message.channel.send('Could not get pokemon due to error: {}'.format(error))
+            return False
+        embed = utils.create_list_pk(pokemon,tname)
+        await ctx.message.channel.send(embed=embed)
+        
     
     @commands.command(pass_context=True)    
     async def updatestat(self, ctx, arg1, arg2, arg3):

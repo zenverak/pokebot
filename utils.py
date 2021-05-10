@@ -17,7 +17,6 @@ def OLD_create_pk_embed(pokemon):
     return embed
     
     
-    
 def create_pk_embed(pokemon):
     embed=discord.Embed(title=pokemon[2], color=0xde1717)
     embed.add_field(name='Species:', value=pokemon[3], inline=False)
@@ -33,7 +32,8 @@ def create_pk_embed(pokemon):
     embed.add_field(name='ATTACK4:', value=pokemon[13], inline=False)
     embed.add_field(name='ABOUT:', value=pokemon[14], inline=False)
     return embed      
-    
+
+   
 def create_pk_battle_embed(pokemon):
     embed=discord.Embed(title='{} in battle'.format(pokemon[1]), color=0xde1717)
     embed.add_field(name='Species:', value=pokemon[2], inline=False)
@@ -48,4 +48,17 @@ def create_pk_battle_embed(pokemon):
     embed.add_field(name='ATTACK3:', value=pokemon[11], inline=False)
     embed.add_field(name='ATTACK4:', value=pokemon[12], inline=False)
     embed.add_field(name='ABOUT:', value=pokemon[13], inline=False)
-    return embed        
+    return embed
+
+    
+def create_list_pk(pokemon,tname):
+    embed=discord.Embed(title="{}'s Pokemon List".format(tname), color=0xde1717)
+    for pk in pokemon:
+        embed.add_field(name=pk[0], value=pk[1], inline=True)
+    return embed
+    
+    
+      
+    
+    
+    

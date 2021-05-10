@@ -22,7 +22,7 @@ logging.basicConfig(handlers=[handler], format='%(asctime)s %(message)s', level=
 bot.logger = logging.getLogger('bot')
 
 
-extens = ['setuppk','battle','all']
+extens = ['setuppk','battle','all','dice']
 #extens = ['modbot', 'stats', 'greeter']
 
 @bot.event
