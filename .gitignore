@@ -1,6 +1,0 @@
-*.db
-*.log
-globals.py
-show.py
-test.py
-__pycache__/
